@@ -20,11 +20,10 @@ class FnordMetric::Namespace
     self
   end
 
-  def announce(event)                  
-    announce_to_timeline(event)
-    announce_to_typelist(event)
-    
+  def announce(event)
     if event[:_session]
+      announce_to_timeline(event)
+      announce_to_typelist(event)
       event[:_session_key] = announce_to_session(event).session_key 
     end
 
